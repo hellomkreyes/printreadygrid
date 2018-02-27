@@ -2,13 +2,14 @@
 
 .grid {
     &-container {
-        max-width: 670px;
+        // max-width: 670px; //print-css max-width
+        max-width: 968px;
         margin: 0 auto;
         display: grid;
         // grid-template-rows: 200px auto 100px;
         // grid-template-columns: minmax(200px, 3fr) 9fr;
         grid-template-rows: 150px [side-start] auto 150px [side-end];
-        grid-template-columns: [header-start] minmax(200px, 2fr) 12fr [header-end];
+        grid-template-columns: [header-start] minmax(200px, 4fr) 12fr [header-end];
     }
 }
 
