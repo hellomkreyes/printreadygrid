@@ -1,0 +1,33 @@
+/*MUST FIND PREFIXED MIXINS*/
+
+.grid {
+    &-container {
+        max-width: 670px;
+        margin: 0 auto;
+        display: grid;
+        // grid-template-rows: 200px auto 100px;
+        // grid-template-columns: minmax(200px, 3fr) 9fr;
+        grid-template-rows: 150px [side-start] auto 150px [side-end];
+        grid-template-columns: [header-start] minmax(200px, 2fr) 12fr [header-end];
+    }
+}
+
+header {
+    grid-column: header-start / header-end;
+    background: pink;
+}
+
+aside {
+    grid-row: side-start / side-end;
+    grid: false;
+    background: maroon;
+}
+
+main {
+    background: lavenderblush;
+    min-height: 25vw;
+}
+
+footer {
+    background: tomato;
+}

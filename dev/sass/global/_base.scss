@@ -1,0 +1,59 @@
+// a { color: $pink; }
+// a:visited { color: $pink; }
+// a:hover, a:focus { color: $white; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+
+html {
+	font-size: 10px;
+  	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -o-font-smoothing: antialiased;
+    ul, ol{ padding-left: 0px; }
+}
+
+input, textarea {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	border-radius: 0 !important;
+}
+
+.skip-link {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #FFF;
+	padding: 30px;
+	border-radius: 8px;
+	transform: translateX(-1000px); /*ensure it's off canvas/viewport */
+	z-index: 100; /*so it goes above all content*/
+}
+
+.skip-link:focus {
+	transform: translateX(0); /*so on focus, the link appears back on the page so that it's visible*/
+	// color: $pink;
+	font-size: 2rem;
+}
+
+.visually-hidden {
+	opacity: 0; /*for pesky android on firefox*/
+	pointer-events: none; /*for pesky android on firefox*/
+	position: absolute;
+	width: 1px; height: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px); /*keep this in case clip-path isn't supported*/
+	clip-path: polygon(0px 0px, 0px 0px, 0px 0px, 0px 0px); /*clip is going to be deprecated, let's use clip-path!*/
+}
+
+::-moz-selection { background: #000; color: #fff; text-shadow: none; }
+::selection { background: #000; color: #fff; text-shadow: none; }
