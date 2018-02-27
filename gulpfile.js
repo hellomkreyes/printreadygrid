@@ -32,7 +32,7 @@ gulp.task("scripts", () => {
         message: "Error: <%= error.message %>",
         title: "Error in JS 💀"
       }))
-    .pipe(source("index.js"))
+    .pipe(source("./dev/js/main.js"))
     .pipe(buffer())
     .pipe(concat("bundle.js"))
     .pipe(gulp.dest("./prod/js"));
